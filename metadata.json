@@ -1,7 +1,7 @@
 {
-    "name": "Arma 3 Windows Key",
-    "description": "Allows the windows key to be used in Arma 3 while keeping it functional in other applications.",
-    "uuid": "arma3-windows-key@mayson.io",
+    "name": "Arma 3 Super Key",
+    "description": "Allows the super key to be used in Arma 3 while keeping it functional in other applications.",
+    "uuid": "arma3-super-key@mayson.io",
     "shell-version": [
         "49"
     ],
