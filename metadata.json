@@ -1,0 +1,10 @@
+{
+    "name": "Arma 3 Windows Key",
+    "description": "Allows the windows key to be used in Arma 3 while keeping it functional in other applications.",
+    "uuid": "arma3-windows-key@mayson.io",
+    "shell-version": [
+        "49"
+    ],
+    "version": 1,
+    "url": "https://github.com/BrettMayson/gnome-arma3"
+}
