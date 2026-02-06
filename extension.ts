@@ -5,15 +5,12 @@ export default class Arma3WindowExtension {
     _windowFocusChangeId: number | null = null;
     _isFullscreenFocused: boolean = false;
     _usingSuper = false;
-    _settings: Gio.Settings;
-
-    constructor() {
-        this._settings = new Gio.Settings({ schema_id: 'org.gnome.mutter' });
-    }
+    _settings: Gio.Settings | null = null;
 
     enable() {
         this._windowFocusChangeId = null;
         this._isFullscreenFocused = false;
+        this._settings = new Gio.Settings({ schema_id: 'org.gnome.mutter' });;
 
         let currentOverlayKey = this._settings.get_string('overlay-key');
         if (currentOverlayKey === '') {
@@ -41,6 +38,8 @@ export default class Arma3WindowExtension {
         if (this._isFullscreenFocused) {
             this.onExitFullscreen();
         }
+
+        this._settings = null;
     }
 
     _onFocusChanged() {
@@ -70,13 +69,13 @@ export default class Arma3WindowExtension {
 
     onEnterFullscreen() {
         // Set the overlay-key to an empty string to disable it
-        if (this._usingSuper)
+        if (this._usingSuper && this._settings)
             this._settings.set_string('overlay-key', '');
     }
 
     onExitFullscreen() {
         // Restore the overlay-key to 'Super'
-        if (this._usingSuper)
+        if (this._usingSuper && this._settings)
             this._settings.set_string('overlay-key', 'Super');
     }
 }
