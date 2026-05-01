@@ -3,8 +3,9 @@
     "description": "Allows the super key to be used in Arma 3 while keeping it functional in other applications.",
     "uuid": "arma3-super-key@mayson.io",
     "shell-version": [
-        "49"
+        "49",
+        "50"
     ],
-    "version": 2,
+    "version": 4,
     "url": "https://github.com/BrettMayson/gnome-arma3"
 }
